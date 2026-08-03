@@ -15,15 +15,23 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   
-  timeout : 30 * 1000,
+  timeout : 100 * 1000, // for denbugging purpose I have increased the timeout to 100 seconds, so that I can 
+  // debug the test cases without any timeout issues, but in real time we should keep the timeout to 30 seconds
+  //  or less than that, so that we can catch the issues faster and we can fix them faster.
 
   expect: {
-    timeout: 5 * 1000
+    timeout: 5 * 1000,
+    
   },
+   reporter: 'html',
+
   use: {
    
      browserName: 'chromium',
      headless: true,
+     screenshot: 'on',
+     trace: 'on'
+
      
 },
 

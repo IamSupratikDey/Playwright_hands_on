@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test');
+  const {test, expect} = require('@playwright/test');
 
 test.only('Calender validations', async ({page}) => {  
     
